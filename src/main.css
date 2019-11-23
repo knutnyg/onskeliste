@@ -24,6 +24,7 @@ h1 {
 
 h2 {
     margin: 0;
+    text-align: left;
 }
 
 .santa {
@@ -45,11 +46,12 @@ h2 {
 }
 
 .expanded {
-    padding: 0 18px;
+    padding: 5px 5px;
     display: grid;
     grid-template-columns: [first] auto [line2] 60px [end];
-    grid-template-rows: 50px;
+    grid-template-rows: auto;
     background-color: #f1f1f1;
+    text-align: left;
 }
 
 ul {
