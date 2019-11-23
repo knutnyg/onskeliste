@@ -6,24 +6,6 @@ import Html.Attributes exposing (class, classList, height, href, src, width)
 import Html.Events exposing (onClick)
 
 
-
----- MODEL ----
-
-
-type alias Wish =
-    { id : Int
-    , title : String
-    , desc : Maybe String
-    , imgUrl : Maybe String
-    , expanded : Bool
-    , link : Maybe String
-    }
-
-
-type alias Model =
-    { wishes : List Wish }
-
-
 wishlist =
     [ { id = 1
       , title = "Batteridrevet blåtannhøytaler"
@@ -89,6 +71,24 @@ wishlist =
       , link = Nothing
       }
     ]
+
+
+
+---- MODEL ----
+
+
+type alias Wish =
+    { id : Int
+    , title : String
+    , desc : Maybe String
+    , imgUrl : Maybe String
+    , expanded : Bool
+    , link : Maybe String
+    }
+
+
+type alias Model =
+    { wishes : List Wish }
 
 
 init : ( Model, Cmd Msg )
@@ -174,7 +174,7 @@ expandedView wish =
                     text "missing"
 
                 Just desc ->
-                    span [] [text desc]
+                    span [] [ text desc ]
             , case wish.link of
                 Nothing ->
                     text ""
