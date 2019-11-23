@@ -46,7 +46,6 @@ h2 {
 }
 
 .expanded {
-    padding: 5px 5px;
     display: grid;
     grid-template-columns: [first] auto [line2] 60px [end];
     grid-template-rows: auto;
@@ -54,8 +53,19 @@ h2 {
     text-align: left;
 }
 
+.exp-text {
+    padding-left: 5px;
+    padding-top: 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.exp-text span {
+    display: block;
+}
+
 ul {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 li {
@@ -76,7 +86,8 @@ li:nth-child(odd) {
 }
 
 .wish-header {
-    margin: 5px;
+    padding-left: 5px;
+    margin-bottom: 5px;
     display: grid;
     grid-template-columns: [first] auto [line2] 40px [line3] 2% [end];
 }

@@ -1,7 +1,7 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html, a, button, div, h1, h2, img, li, text, ul)
+import Html exposing (Html, a, button, div, h1, h2, img, li, span, text, ul)
 import Html.Attributes exposing (class, classList, height, href, src, width)
 import Html.Events exposing (onClick)
 
@@ -24,7 +24,6 @@ type alias Model =
     { wishes : List Wish }
 
 
-
 wishlist =
     [ { id = 1
       , title = "Batteridrevet blåtannhøytaler"
@@ -39,50 +38,58 @@ wishlist =
       , imgUrl = Just "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/image/500x/17f82f742ffe127f42dca9de82fb58b1/7/5/x75103-11201_DetailImage2.jpg.pagespeed.ic.KBzhkGGS14.jpg"
       , expanded = False
       , link = Just "https://www.fjellsport.no/ulvang-allround-3pk-grey-melange-charcoal-melange.html?channable=e80712.MTA5LTI4MTA&gclid=CjwKCAiAzuPuBRAIEiwAkkmOSHLzWSalscgkHiliffYdPCQ7vpzmhifSnNwZGWiPGedwVamBieHT8hoCiSsQAvD_BwE"
-      }, { id = 3
+      }
+    , { id = 3
       , title = "Fin hverdagssekk"
       , desc = Just "Jeg ønsker meg en litt finere ryggsekk til hverdagen. Gjerne litt stiligere enn en vanlig skolesekk. Jeg har typisk med meg en liten laptop, trengingstøy og sykler i alt slags vær"
       , imgUrl = Nothing
       , expanded = False
       , link = Nothing
-      }, { id = 4
+      }
+    , { id = 4
       , title = "Treningsbukse"
       , desc = Just "En til å løpe i. Gjerne litt tettsittende men ikke thights og ikke i sånn tykk bommul. Størrelse M (41/42)"
       , imgUrl = Just "/treningsbukse.jpeg"
       , expanded = False
       , link = Nothing
-      }, { id = 5
+      }
+    , { id = 5
       , title = "Trenings skjorte langermet"
       , desc = Just "Litt varmere / solid skjorte til å løpe ute med når det blir litt kaldere. Bra med refleks, lomme til mobil og nøkler"
       , imgUrl = Nothing
       , expanded = False
       , link = Nothing
-      }, { id = 6
+      }
+    , { id = 6
       , title = "The Unicorn project"
       , desc = Just "En bok som handler om prosjekter"
       , imgUrl = Nothing
       , expanded = False
       , link = Just "https://www.amazon.com/Unicorn-Project-Developers-Disruption-Thriving-ebook/dp/B07QT9QR41"
-      }, { id = 7
+      }
+    , { id = 7
       , title = "Hengekøye m/myggnetting"
       , desc = Just "I 2020 skal jeg sove ute minst 5 ganger. Ticket to the Moon er et kjent alternativ"
       , imgUrl = Just "https://thumbs.nosto.com/quick/waj8jbwd/1/713176/8ca3abb90cec4b20a487491e372a79f71ec5df53ef61fb2538aca4a7b3a92977a/A"
       , expanded = False
       , link = Just "https://www.fjellsport.no/ticket-to-the-moon-original-hammock-pakke.html?q=ticket%20to%20the%20moon"
-      }, { id = 8
-      , title = "Vindusvaskerobot 🤖"
+      }
+    , { id = 8
+      , title = "Vindusvaskerobot \u{1F916}"
       , desc = Just "Hvorfor gjøre noe selv når det kan automatiseres? Ecovacs Winbot får bra kritikk men er svindyr 💸"
       , imgUrl = Nothing
       , expanded = False
       , link = Nothing
-      }, { id = 9
-      , title = "Koffert 🧳"
+      }
+    , { id = 9
+      , title = "Koffert \u{1F9F3}"
       , desc = Just "Australiakofferten fra 2005 har sett bedre dager. Det er kansje på tide å gå for noe mer moderne"
       , imgUrl = Just "/suitcase.jpg"
       , expanded = False
       , link = Nothing
       }
     ]
+
 
 init : ( Model, Cmd Msg )
 init =
@@ -161,24 +168,26 @@ expandedView wish =
                 "hidden"
             )
         ]
-        [ case wish.desc of
-            Nothing ->
-                text "missing"
+        [ div [ class "exp-text" ]
+            [ case wish.desc of
+                Nothing ->
+                    text "missing"
 
-            Just desc ->
-                text desc
+                Just desc ->
+                    span [] [text desc]
+            , case wish.link of
+                Nothing ->
+                    text ""
+
+                Just url ->
+                    a [ href url ] [ text "eksempel" ]
+            ]
         , case wish.imgUrl of
             Nothing ->
                 text ""
 
             Just url ->
                 img [ src url, class "teaser" ] []
-        , case wish.link of
-            Nothing ->
-                text ""
-
-            Just url ->
-                a [ href url ] [ text "eksempel"]
         ]
 
 
