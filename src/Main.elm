@@ -7,69 +7,56 @@ import Html.Events exposing (onClick)
 
 
 wishlist =
-    [ { id = 1
-      , title = "Batteridrevet blåtannhøytaler"
+    [ { title = "Batteridrevet blåtannhøytaler"
       , desc = Just "En solid og bra en til å ta med seg rundt omkring."
       , imgUrl = Just "https://www.komplett.no/img/p/1200/1132400.jpg"
-      , expanded = False
       , link = Just "https://www.komplett.no/product/1132400/tv-lyd-bilde/hoeyttalere/multiroom/ultimate-ears-wonderboom-2-hoeyttaler"
       }
-    , { id = 2
-      , title = "Ullsokker"
+    , { title = "Ullsokker"
       , desc = Just "Halvtykke strikka ullsokker, mer tettsittende tursokker og hverdagssokker"
       , imgUrl = Just "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/image/500x/17f82f742ffe127f42dca9de82fb58b1/7/5/x75103-11201_DetailImage2.jpg.pagespeed.ic.KBzhkGGS14.jpg"
-      , expanded = False
       , link = Just "https://www.fjellsport.no/ulvang-allround-3pk-grey-melange-charcoal-melange.html?channable=e80712.MTA5LTI4MTA&gclid=CjwKCAiAzuPuBRAIEiwAkkmOSHLzWSalscgkHiliffYdPCQ7vpzmhifSnNwZGWiPGedwVamBieHT8hoCiSsQAvD_BwE"
       }
-    , { id = 3
-      , title = "Fin hverdagssekk"
+    , { title = "Fin hverdagssekk"
       , desc = Just "Jeg ønsker meg en litt finere ryggsekk til hverdagen. Gjerne litt stiligere enn en vanlig skolesekk. Jeg har typisk med meg en liten laptop, trengingstøy og sykler i alt slags vær"
       , imgUrl = Nothing
-      , expanded = False
       , link = Nothing
       }
-    , { id = 4
-      , title = "Treningsbukse"
+    , { title = "Treningsbukse"
       , desc = Just "En til å løpe i. Gjerne litt tettsittende men ikke thights og ikke i sånn tykk bommul. Størrelse M (41/42)"
       , imgUrl = Just "/treningsbukse.jpeg"
-      , expanded = False
       , link = Nothing
       }
-    , { id = 5
-      , title = "Trenings skjorte langermet"
+    , { title = "Trenings skjorte langermet"
       , desc = Just "Litt varmere / solid skjorte til å løpe ute med når det blir litt kaldere. Bra med refleks, lomme til mobil og nøkler"
-      , imgUrl = Nothing
-      , expanded = False
+      , imgUrl = Just "https://www.xxl.no/filespin/30993781bd6d4cdabbcef629613c706c?resize=544,544&quality=90&bgcolor=efefef"
       , link = Nothing
       }
-    , { id = 6
-      , title = "The Unicorn project"
+    , { title = "The Unicorn project"
       , desc = Just "En bok som handler om prosjekter"
-      , imgUrl = Nothing
-      , expanded = False
+      , imgUrl = Just "https://images-na.ssl-images-amazon.com/images/I/51w7S7zFNXL.jpg"
       , link = Just "https://www.amazon.com/Unicorn-Project-Developers-Disruption-Thriving-ebook/dp/B07QT9QR41"
       }
-    , { id = 7
-      , title = "Hengekøye m/myggnetting"
+    , { title = "Hengekøye m/myggnetting"
       , desc = Just "I 2020 skal jeg sove ute minst 5 ganger. Ticket to the Moon er et kjent alternativ"
       , imgUrl = Just "https://thumbs.nosto.com/quick/waj8jbwd/1/713176/8ca3abb90cec4b20a487491e372a79f71ec5df53ef61fb2538aca4a7b3a92977a/A"
-      , expanded = False
       , link = Just "https://www.fjellsport.no/ticket-to-the-moon-original-hammock-pakke.html?q=ticket%20to%20the%20moon"
       }
-    , { id = 8
-      , title = "Vindusvaskerobot \u{1F916}"
-      , desc = Just "Hvorfor gjøre noe selv når det kan automatiseres? Ecovacs Winbot får bra kritikk men er svindyr 💸"
-      , imgUrl = Nothing
-      , expanded = False
-      , link = Nothing
-      }
-    , { id = 9
-      , title = "Koffert \u{1F9F3}"
+    , { title = "Koffert \u{1F9F3}"
       , desc = Just "Australiakofferten fra 2005 har sett bedre dager. Det er kansje på tide å gå for noe mer moderne"
       , imgUrl = Just "/suitcase.jpg"
-      , expanded = False
       , link = Nothing
       }
+    , { title = "Termokanne"
+      , desc = Just "En serveringskanne til kaffe. Jeg brygger stort sett en halv liter om gangen, så den trenger ikke være så stor"
+      , imgUrl = Just "https://stockfleths.as/wp-content/uploads/2019/02/Hario-termokanne-svart-768x1048.jpg"
+      , link = Just "https://stockfleths.as/produkt/hario-termokanne/"
+      }
+      , { title = "Felleski"
+            , desc = Just "Klassiske felleski til en som ikke er så ofte på ski. Jeg har allerede Rottefella sko og staver"
+            , imgUrl = Just "https://www.xxl.no/filespin/3afeb68ac1e544e7a9ee0f82350140fd?resize=544,544&quality=90&bgcolor=efefef"
+            , link = Just "https://stockfleths.as/produkt/hario-termokanne/"
+            }
     ]
 
 
@@ -78,22 +65,32 @@ wishlist =
 
 
 type alias Wish =
-    { id : Int
-    , title : String
+    { title : String
     , desc : Maybe String
     , imgUrl : Maybe String
-    , expanded : Bool
     , link : Maybe String
     }
 
 
+type alias WishModel =
+    { wish : Wish
+    , id : Int
+    , expanded : Bool
+    }
+
+
 type alias Model =
-    { wishes : List Wish }
+    { wishes : List WishModel }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( Model wishlist, Cmd.none )
+    ( Model (toModel wishlist), Cmd.none )
+
+
+toModel : List Wish -> List WishModel
+toModel list =
+    List.indexedMap (\i wish -> WishModel wish i False) list
 
 
 
@@ -138,11 +135,11 @@ view model =
         ]
 
 
-wishView : Wish -> Html Msg
+wishView : WishModel -> Html Msg
 wishView wish =
     li []
         [ div [ class "wish-header" ]
-            [ h2 [] [ text wish.title ]
+            [ h2 [] [ text wish.wish.title ]
             , button [ onClick (Flip wish.id) ]
                 [ text
                     (if wish.expanded then
@@ -157,7 +154,7 @@ wishView wish =
         ]
 
 
-expandedView : Wish -> Html Msg
+expandedView : WishModel -> Html Msg
 expandedView wish =
     div
         [ class
@@ -169,20 +166,20 @@ expandedView wish =
             )
         ]
         [ div [ class "exp-text" ]
-            [ case wish.desc of
+            [ case wish.wish.desc of
                 Nothing ->
                     text "missing"
 
                 Just desc ->
                     span [] [ text desc ]
-            , case wish.link of
+            , case wish.wish.link of
                 Nothing ->
                     text ""
 
                 Just url ->
                     a [ href url ] [ text "eksempel" ]
             ]
-        , case wish.imgUrl of
+        , case wish.wish.imgUrl of
             Nothing ->
                 text ""
 
