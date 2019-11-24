@@ -52,11 +52,11 @@ wishlist =
       , imgUrl = Just "https://stockfleths.as/wp-content/uploads/2019/02/Hario-termokanne-svart-768x1048.jpg"
       , link = Just "https://stockfleths.as/produkt/hario-termokanne/"
       }
-      , { title = "Felleski"
-            , desc = Just "Klassiske felleski til en som ikke er så ofte på ski. Jeg har allerede Rottefella sko og staver"
-            , imgUrl = Just "https://www.xxl.no/filespin/3afeb68ac1e544e7a9ee0f82350140fd?resize=544,544&quality=90&bgcolor=efefef"
-            , link = Just "https://stockfleths.as/produkt/hario-termokanne/"
-            }
+    , { title = "Felleski"
+      , desc = Just "Klassiske felleski til en som ikke er så ofte på ski. Jeg har allerede Rottefella sko og staver"
+      , imgUrl = Just "https://www.xxl.no/filespin/3afeb68ac1e544e7a9ee0f82350140fd?resize=544,544&quality=90&bgcolor=efefef"
+      , link = Just "https://www.xxl.no/atomic-pro-c1-skintec-performance-18-19-langrennssett-felleski/p/bp/1157202_b#&gid=1&pid=2"
+      }
     ]
 
 
