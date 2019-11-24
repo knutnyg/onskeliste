@@ -48,7 +48,7 @@ wishlist =
       , link = Nothing
       }
     , { title = "Termokanne"
-      , desc = Just "En serveringskanne til kaffe. Jeg brygger stort sett en halv liter om gangen, så den trenger ikke være så stor"
+      , desc = Just "En serveringskanne til kaffe. Jeg brygger stort sett en halv liter om gangen, så den trenger ikke være så stor. Sjekk ut Hario V60!"
       , imgUrl = Just "https://stockfleths.as/wp-content/uploads/2019/02/Hario-termokanne-svart-768x1048.jpg"
       , link = Just "https://stockfleths.as/produkt/hario-termokanne/"
       }
