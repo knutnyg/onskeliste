@@ -17,6 +17,7 @@ body {
     display: flex;
     justify-content: center;
     height: 100%;
+    background-color: darkblue;
 }
 
 h1 {
@@ -90,9 +91,8 @@ li:nth-child(odd) {
 .snow {
     width: 100%;
     height: 100%;
-    background-color: darkblue;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
 }
 
 .wish-header {
@@ -118,4 +118,8 @@ li:nth-child(odd) {
     .container {
         width: 760px;
     }
+}
+
+button {
+    z-index: 2;
 }
