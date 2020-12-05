@@ -7,55 +7,10 @@ import Html.Events exposing (onClick)
 
 
 wishlist =
-    [ { title = "Batteridrevet blåtannhøytaler"
-      , desc = Just "En solid og bra en til å ta med seg rundt omkring."
-      , imgUrl = Just "https://www.komplett.no/img/p/1200/1132400.jpg"
-      , link = Just "https://www.komplett.no/product/1132400/tv-lyd-bilde/hoeyttalere/multiroom/ultimate-ears-wonderboom-2-hoeyttaler"
-      }
-    , { title = "Ullsokker"
-      , desc = Just "Halvtykke strikka ullsokker, mer tettsittende tursokker og hverdagssokker"
-      , imgUrl = Just "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/image/500x/17f82f742ffe127f42dca9de82fb58b1/7/5/x75103-11201_DetailImage2.jpg.pagespeed.ic.KBzhkGGS14.jpg"
-      , link = Just "https://www.fjellsport.no/ulvang-allround-3pk-grey-melange-charcoal-melange.html?channable=e80712.MTA5LTI4MTA&gclid=CjwKCAiAzuPuBRAIEiwAkkmOSHLzWSalscgkHiliffYdPCQ7vpzmhifSnNwZGWiPGedwVamBieHT8hoCiSsQAvD_BwE"
-      }
-    , { title = "Fin hverdagssekk"
-      , desc = Just "Jeg ønsker meg en litt finere ryggsekk til hverdagen. Gjerne litt stiligere enn en vanlig skolesekk. Jeg har typisk med meg en liten laptop, trengingstøy og sykler i alt slags vær"
-      , imgUrl = Nothing
-      , link = Nothing
-      }
-    , { title = "Treningsbukse"
-      , desc = Just "En til å løpe i. Gjerne litt tettsittende men ikke thights og ikke i sånn tykk bommul. Størrelse M (41/42)"
-      , imgUrl = Just "/treningsbukse.jpeg"
-      , link = Nothing
-      }
-    , { title = "Trenings skjorte langermet"
-      , desc = Just "Litt varmere / solid skjorte til å løpe ute med når det blir litt kaldere. Bra med refleks, lomme til mobil og nøkler"
-      , imgUrl = Just "https://www.xxl.no/filespin/30993781bd6d4cdabbcef629613c706c?resize=544,544&quality=90&bgcolor=efefef"
-      , link = Nothing
-      }
-    , { title = "The Unicorn project"
-      , desc = Just "En bok som handler om prosjekter"
-      , imgUrl = Just "https://images-na.ssl-images-amazon.com/images/I/51w7S7zFNXL.jpg"
-      , link = Just "https://www.amazon.com/Unicorn-Project-Developers-Disruption-Thriving-ebook/dp/B07QT9QR41"
-      }
-    , { title = "Hengekøye m/myggnetting"
-      , desc = Just "I 2020 skal jeg sove ute minst 5 ganger. Ticket to the Moon er et kjent alternativ"
-      , imgUrl = Just "https://thumbs.nosto.com/quick/waj8jbwd/1/713176/8ca3abb90cec4b20a487491e372a79f71ec5df53ef61fb2538aca4a7b3a92977a/A"
-      , link = Just "https://www.fjellsport.no/ticket-to-the-moon-original-hammock-pakke.html?q=ticket%20to%20the%20moon"
-      }
-    , { title = "Koffert \u{1F9F3}"
+    [{ title = "Koffert \u{1F9F3}"
       , desc = Just "Australiakofferten fra 2005 har sett bedre dager. Det er kansje på tide å gå for noe mer moderne"
       , imgUrl = Just "/suitcase.jpg"
       , link = Nothing
-      }
-    , { title = "Termokanne"
-      , desc = Just "En serveringskanne til kaffe. Jeg brygger stort sett en halv liter om gangen, så den trenger ikke være så stor. Sjekk ut Hario V60!"
-      , imgUrl = Just "https://stockfleths.as/wp-content/uploads/2019/02/Hario-termokanne-svart-768x1048.jpg"
-      , link = Just "https://stockfleths.as/produkt/hario-termokanne/"
-      }
-    , { title = "Felleski"
-      , desc = Just "Klassiske felleski til en som ikke er så ofte på ski. Jeg har allerede Rottefella sko og staver"
-      , imgUrl = Just "https://www.xxl.no/filespin/3afeb68ac1e544e7a9ee0f82350140fd?resize=544,544&quality=90&bgcolor=efefef"
-      , link = Just "https://www.xxl.no/atomic-pro-c1-skintec-performance-18-19-langrennssett-felleski/p/bp/1157202_b#&gid=1&pid=2"
       }
     ]
 
