@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Main exposing (Model, Msg(..), Wish, WishModel, expandedView, init, main, toModel, update, view, wishView, wishlist)
 
 import Browser
 import Html exposing (Html, a, button, div, h1, h2, img, li, span, text, ul)
@@ -7,11 +7,33 @@ import Html.Events exposing (onClick)
 
 
 wishlist =
-    [{ title = "Koffert \u{1F9F3}"
+    [ { title = "Koffert \u{1F9F3}"
       , desc = Just "Australiakofferten fra 2005 har sett bedre dager. Det er kansje på tide å gå for noe mer moderne"
       , imgUrl = Just "/suitcase.jpg"
       , link = Nothing
       }
+    , { title = "En matopplevelse"
+      , desc = Just "Jeg ønsker meg en matopplevelse jeg kan ta med Victoria på 😻"
+      , imgUrl = Just "/dinner.jpg"
+      , link = Just "https://restaurantguiden.aftenposten.no"
+      }
+    , { title = "Tufte pysj"
+      , desc = Just "Såååå myk 🐨"
+      , imgUrl = Just "/pysj.jpg"
+      , link = Just "https://tuftewear.no/products/tufte-mens-pyjamas?variant=34150859178115"
+      }
+    , { title = "Skåler"
+      , desc = Just "Litt moderne freshe skåler til f.eks suppe"
+      , imgUrl = Just "/skåler.jpg"
+      , link = Just "https://www.nordicnest.no/merkevarer/iittala/teema-skal-15-cm/?variantId=16228-01&currency=NOK&countryCode=NO&utm_source=google&utm_medium=surfaces&gclid=CjwKCAiA_Kz-BRAJEiwAhJNY79oIgW-12608zHyBg53ngF4kV2ZMfZwkwSyfeExfdKzfWCBhYmqXkBoCC1UQAvD_BwE"
+      }
+    , { title = "Apple Watch 5 Cellular \u{1F911}"
+      , desc = Just "Tror ikke jeg har vært så snill i år, men en vet aldri 🙈"
+      , imgUrl = Just "/klokke.jpg"
+      , link = Just "https://www.komplett.no/product/1169725/mobiler-klokker/smartklokker/apple-watch-series-6-40mm-4g-blaablaa"
+      }
+
+    -- Ullfrættis
     ]
 
 
